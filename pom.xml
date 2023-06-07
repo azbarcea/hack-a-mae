@@ -13,7 +13,7 @@
 		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
 		<org.springframework.version>6.0.8</org.springframework.version>
 		<org.slf4j.version>1.7.32</org.slf4j.version>
-		<org.hibernate.version>5.6.4.Final</org.hibernate.version>
+		<org.hibernate.version>6.2.2.Final</org.hibernate.version><!-- latest -->
 	</properties>
 
 	<dependencies>
@@ -21,6 +21,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<!-- latest -->
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
@@ -36,6 +37,7 @@
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
+			<!-- not found in BOM -->
 			<version>3.3.0</version>
 		</dependency>
 
@@ -43,7 +45,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
+			<!-- latest, dependabot recommends 8.0.29 -->
+			<version>8.0.33</version>
 		</dependency>
 
 		<!-- Hibernate -->
@@ -58,20 +61,21 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${org.hibernate.version}</version>
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${org.hibernate.version}</version>
-		</dependency>
+		</dependency -->
 
 		<!-- DOM4J -->
 		<dependency>
 			<groupId>org.dom4j</groupId>
 			<artifactId>dom4j</artifactId>
-			<version>2.1.3</version>
+			<version>2.1.3</version><!-- org.dom4j:dom4j not found in tidelift, dom4j was found -->
 		</dependency>
 
 		<!-- Commons Logging -->
+		<!-- TODO: commons logging may neet to be replaced with a newer logging framework -->
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
@@ -82,14 +86,14 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
-			<version>4.4</version>
+			<version>4.4</version><!-- org.dom4j:dom4j not found in tidelift, dom4j was found -->
 		</dependency>
 
 		<!-- ANTLR -->
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4</artifactId>
-			<version>4.9.3</version>
+			<version>4.9.3</version><!-- org.antlr:antlr4 was not found in tidelift -->
 		</dependency>
 
 		<!-- Jackson -->
@@ -101,7 +105,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.12.4</version>
+			<version>2.12.4</version><!-- jackson-annotations was not found in tidelift -->
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
